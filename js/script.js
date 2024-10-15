@@ -1,5 +1,28 @@
 "use strict"
 
+const numberOfFilms = +prompt("How many movies have you watched?", '');
+
+// let numberOfFilms = prompt("How many movies have you watched?");
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+const a = prompt("Ur last film?", ''),
+      b = prompt("Ur rating for this?", ''),
+      c = prompt("Ur last film?", ''),
+      d = prompt("Ur rating for this?", '');
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+
+console.log (personalMovieDB);
+
 // console.log('arr' + " - object");
 // console.log(4 + +"5");
 
