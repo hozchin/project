@@ -1,27 +1,136 @@
 "use strict"
 
-const numberOfFilms = +prompt("How many movies have you watched?", '');
+let num = 50;
 
-// let numberOfFilms = prompt("How many movies have you watched?");
+// while (num < 55) {
+//     console.log(num);
+//     num++;
+// }
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num<55);
 
-const a = prompt("Ur last film?", ''),
-      b = prompt("Ur rating for this?", ''),
-      c = prompt("Ur last film?", ''),
-      d = prompt("Ur rating for this?", '');
+let result = '';
+const length = 7;
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+first: for (let i = 1; i < 3; i++) {
+    console.log (`First lvl: ${i}`);
+    for (let j = 0; j < 3; j++) {
+        console.log (`Second lvl: ${j}`);
+        for (let k = 0; k < 5; k++) {
+            if (k === 2) break first;
+            console.log (`Third lvl: ${k}`);
+        }
+    }
+
+}
+
+console.log (result);
 
 
-console.log (personalMovieDB);
+// const hamburger = true;
+// const fries = true;
+
+// if (hamburger && fries) {
+//     console.log('Im not hungry!');
+// }
+
+// console.log((hamburger && fries));
+
+// const hamburger = 3;
+// const fries = 3;
+// const cola = 1;
+// console.log(hamburger === 3 && cola === 1 && fries);
+// console.log(1 && 0);
+// console.log(1 && 5);
+// console.log(null && 5);
+// console.log(0 && 'asdasdadaw');
+
+// if (hamburger === 3 && cola === 1 && fries) {
+//     console.log('We are all full!');
+// } else {
+//     console.log('We are hungry!');
+// }
+
+
+// const hamburger = 3;
+// const fries = 3;
+// const cola = null;
+// const nuggets = 1;
+
+// console.log(hamburger === 3 && (cola === 2 || fries === 3) && nuggets);
+
+// if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
+//     console.log('We are full!');
+// } else {
+//     console.log('We are hungry!');
+// }
+
+// let johnReport, alexReport, samReport, mariaReport = 'done';
+
+// console.log(hamburger === 3 && cola === 2);
+
+// console.log(!0);
+
+// if (4 == 9) {
+//     console.log('Ok!');
+// } else {
+//     console.log('Error!');
+// }
+
+
+// if (num < 49) {
+//     console.log('Error');
+// } else if (num > 100) {
+//     console.log('Too much');
+// } else {
+//     console.log('Ok!');
+// }
+
+// (num === 50) ? console.log('Okay') : console.log('Error');
+
+
+// const num = 50;
+// switch (num) {
+//     case 49:
+//         console.log('Error');
+//         break;
+//     case 100:
+//         console.log('Error');
+//         break;
+//     case 50:
+//         console.log('Ok');
+//         break;
+//     default:
+//         console.log('Default');
+//         break;
+// }
+
+// const numberOfFilms = +prompt("How many movies have you watched?", '');
+
+// // let numberOfFilms = prompt("How many movies have you watched?");
+
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
+
+// const a = prompt("Ur last film?", ''),
+//       b = prompt("Ur rating for this?", ''),
+//       c = prompt("Ur last film?", ''),
+//       d = prompt("Ur rating for this?", '');
+
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
+
+
+// console.log (personalMovieDB);
 
 // console.log('arr' + " - object");
 // console.log(4 + +"5");
