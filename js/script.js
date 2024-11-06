@@ -1,88 +1,422 @@
 "use strict";
+// ============================================================ 37 Практика, ч. 4 используем объекты =====================================================
+
+
+// const personalMovieDB = {
+//     count: 0,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+//     start: function() {
+//         personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    
+//         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+//             personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//         }
+//     },
+//     rememberMyFilms: function() {
+//         for (let i = 0; i < 2; i++) {
+//             const a = prompt('Один из последних просмотренных фильмов?', ''),
+//                   b = prompt('На сколько оцените его?', '');
+        
+//             if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//                 personalMovieDB.movies[a] = b;
+//                 console.log('done');
+//             } else {
+//                 console.log('error');
+//                 i--;
+//             }
+//         }
+//     },
+//     detectPersonalLevel: function() {
+//         if (personalMovieDB.count < 10) {
+//             console.log("Просмотрено довольно мало фильмов");
+//         } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//             console.log("Вы классический зритель");
+//         } else if (personalMovieDB.count >= 30) {
+//             console.log("Вы киноман");
+//         } else {
+//             console.log("Произошла ошибка");
+//         }
+//     },
+//     showMyDB: function(hidden) {
+//         if (!hidden) {
+//             console.log(personalMovieDB);
+//         }
+//     },
+//     toggleVisibleMyDB: function() {
+//         if (personalMovieDB.privat) {
+//             personalMovieDB.privat = false;
+//         } else {
+//             personalMovieDB.privat = true;
+//         }
+//     },
+//     writeYourGenres: function() {
+//         for (let i = 1; i < 2; i++) {
+//             let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+
+//             if (genre === '' || genre == null) {
+//                 console.log('Вы ввели некорректные данные или не ввели их вовсе');
+//                 i--;
+//             } else {
+//                 personalMovieDB.genres[i - 1] = genre;
+//             } 
+            
+//             // Альтернативный вариант из урока
+            
+//             // let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
+
+//             // if (genres === '' || genres == null) {
+//             //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
+//             //     i--;
+//             // } else {
+//             //     personalMovieDB.genres = genres.split(', ');
+//             //     personalMovieDB.genres.sort();
+//             // } 
+//         }
+
+//         personalMovieDB.genres.forEach((item, i) => {
+//             console.log(`Любимый жанр ${i + 1} - это ${item}`);
+//         });
+//     }
+// };
+
+
+
+// ============================================================ 36 основы ООП, прототипно-ориентированное программирование =====================================================
+
+// let str = " some";
+// let strObj = new String(str);
+
+// console.log(typeof(str));
+// console.log(typeof(strObj));
+
+// console.dir([1,2,3]);
+
+// const soldier = {
+//     health: 400,
+//     armor: 100,
+//     sayHello: function() {
+//         console.log("Hello");
+//     }
+// };
+
+// const john = Object.create(soldier);
+
+
+// const john = {
+//     health: 200
+// };
+
+// john.__proto__ = soldier; // old variant
+
+// Object.setPrototypeOf(john, soldier);
+
+// john.sayHello();
+
+
+
+
+// ============================================================ 35 Передача по ссылке или по значениею, Spread оператор ЕС6-9 =====================================================
+
+// let a = 5,
+//     b = a;
+
+// b = b + 5;
+
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj; // передает ссылку, а не значение
+// copy.a = 10; // здесь получается передача значения по ссылке
+
+// console.log(obj);
+// console.log(copy);
+
+// const newNumbers = {...numbers}; // метод без цикла
+// newNumbers.a = 10;
+// newNumbers.c.x = 10;
+
+// console.log(numbers);
+// console.log(newNumbers);
+
+
+// const add = {
+//     d: 17,
+//     e: 20
+// };
+
+// // console.log(Object.assign(numbers, add));
+// const clone = Object.assign({}, add);
+
+// clone.d = 20;
+
+// // console.log(add);
+// // console.log(clone);
+
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+
+// newArray[2] = 'test';
+
+// console.log(oldArray);
+// console.log(newArray);
+
+
+
+// const video = ['youtube', 'viemo', 'rutube'],
+//       blogs = ['wp', 'lj', 'blogger'],
+//       internet = [...video, ...blogs, 'vk', 'facebook', 'ok'];
+
+// console.log(internet);
+
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// const num = [2, 5, 7];
+
+// log(...num);
+
+
+
+// const array = ["a", "b", "c"];
+
+// const newArray2 = [...array];
+
+// console.log(newArray2);
+
+
+
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newObj = {...q};
+
+// console.log(newObj);
+
+// ============================================================ 33 Масситвы и псевдомассивы =====================================================
+
+// const arr = [1, 22, 13, 26, 8];
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b) {
+//     return a - b;
+// }
+
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
+
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} inner array ${arr}`);
+// });
+
+// const str = prompt ("","");
+
+// const products = str.split(", ");
+// products.sort();
+// console.log(products);
+// console.log(products.join('; '));
+
+// arr.pop();
+// console.log(arr);
+
+// arr.push(10);
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+
+
+
+// ============================================================ 32 Объекты =====================================================
+
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   },
+//   makeTest: function() {
+//     console.log("Test");
+//   }
+// }
+
+// options.makeTest();
+
+// const {border, bg} = options.colors;
+// console.log(border, bg);
+
+// console.log(options["colors"]["border"]);
+
+// console.log(options.name);
+
+// delete options.name;
+
+// console.log(options);
+
+// let counter = 0;
+
+
+// for (let key in options) {
+//   if (typeof(options[key]) == 'object') {
+//     for (let i in options[key]) {
+//       console.log(`Options ${i}: ${options[key][i]}`);
+//       counter++;
+//     }
+//   }
+//   else {
+//     console.log(`Options ${key}: ${options[key]}`);
+//     counter++;
+//   }
+
+// } 
+
+// for (let key in options) {
+//   if (typeof(options[key]) == 'object') {
+//     counter++;
+//   }
+
+// } 
+
+// console.log(counter);
+
+// console.log(Object.keys(options.colors));
+// console.log(Object.keys(options));
+// console.log(Object.keys(options).length);
+
+
+// ============================================================ 31 Callback функция =====================================================
+
+// function first() {
+//   // Do something
+//   setTimeout(function() {
+//     console.log(1);
+//   }, 500);
+// }
+// function second() {
+//   console.log(2);
+// }
+
+// first();
+// second();
+
+// function learnJS(lang, callback) {
+//   console.log(`I learn: ${lang}`);
+//   callback();
+// }
+
+// function done() {
+//   console.log('I complete this..');
+// }
+
+// learnJS('JS', done);
+
 // ============================================================ 29 Практика ч.3 Используем функции =====================================================
 
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-  numberOfFilms = +prompt("How many movies have you watched?", '');
-  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-    numberOfFilms = +prompt("How many movies have you watched?", '');
-  }
-}
+// function start() {
+//   numberOfFilms = +prompt("How many movies have you watched?", '');
+//   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//     numberOfFilms = +prompt("How many movies have you watched?", '');
+//   }
+// }
 
-start();
+// start();
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
 
 
-function rememberMyFilms() {
-  for (let i = 1; i <= numberOfFilms; i++) {
-    let a = prompt("Ur last film?", '');
-    let b = prompt("Ur rating for this?", '');
-    if (a != null && b != null && a != '' && b != '' && a.length < 20 && b.length < 20) {
-        personalMovieDB.movies[a] = b;
-        console.log('Done');
-    } else {
-        console.log('Error-2');
-        i--;
-    }
-  }
-}
+// function rememberMyFilms() {
+//   for (let i = 1; i <= numberOfFilms; i++) {
+//     let a = prompt("Ur last film?", '').trim();
+//     let b = prompt("Ur rating for this?", '');
+//     if (a != null && b != null && a != '' && b != '' && a.length < 20 && b.length < 20) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('Done');
+//     } else {
+//         console.log('Error-2');
+//         i--;
+//     }
+//   }
+// }
 
-rememberMyFilms();
+// rememberMyFilms();
 
-let c = personalMovieDB.count;
+// let c = personalMovieDB.count;
 
-function detectPersonalLevel() {
-    if (c < 10) {
-      console.log('U see few films');
-  } else {
-      if (c > 10 && c < 30) {
-          console.log('U classic');
-      } else {
-          if (c > 30) {
-              console.log('U cinemaman');
-          } else {
-              console.log('Error');
-          }
-      }
-  }
-}
+// function detectPersonalLevel() {
+//     if (c < 10) {
+//       console.log('U see few films');
+//   } else {
+//       if (c > 10 && c < 30) {
+//           console.log('U classic');
+//       } else {
+//           if (c > 30) {
+//               console.log('U cinemaman');
+//           } else {
+//               console.log('Error');
+//           }
+//       }
+//   }
+// }
 
-detectPersonalLevel();
+// detectPersonalLevel();
 
-// console.log(personalMovieDB);
-console.log('Count = ' + personalMovieDB.count);
+// // console.log(personalMovieDB);
+// console.log('Count = ' + personalMovieDB.count);
 
-function showMyDB(hidden) {
-  if (!hidden) {
-    console.log(personalMovieDB);
-  }
-}
-
-showMyDB(personalMovieDB.privat);
-
-// ============ мой вариант ================
-// function showMyDB() {
-//   if (personalMovieDB.privat == false) {
+// function showMyDB(hidden) {
+//   if (!hidden) {
 //     console.log(personalMovieDB);
 //   }
 // }
 
-function writeYourGenres() {
-  for (let i = 1; i <= 3; i++) {
-    const genre = prompt(`How ur like genre for N ${i}?`, '');
-    personalMovieDB.genres[i-1] = genre;
-  }
-}
+// showMyDB(personalMovieDB.privat);
+
+// // ============ мой вариант ================
+// // function showMyDB() {
+// //   if (personalMovieDB.privat == false) {
+// //     console.log(personalMovieDB);
+// //   }
+// // }
+
+// function writeYourGenres() {
+//   for (let i = 1; i <= 3; i++) {
+//     const genre = prompt(`How ur like genre for N ${i}?`, '');
+//     personalMovieDB.genres[i-1] = genre;
+//   }
+// }
 
 // ============ мой вариант ================
 // function writeYourGenres() {
@@ -91,8 +425,9 @@ function writeYourGenres() {
 //   }
 // }
 
-console.log(personalMovieDB.genres);
-writeYourGenres();
+// console.log(personalMovieDB.genres);
+// writeYourGenres();
+
 
 
 
