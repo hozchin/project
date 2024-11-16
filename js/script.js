@@ -1,4 +1,194 @@
 "use strict";
+// ============================================================ 43 Действия с элементами на странице =====================================================
+
+
+// const box = document.getElementById('box');
+// const btns = document.getElementsByTagName('button');
+// const circles = document.getElementsByClassName('circle');
+// const wrapper = document.querySelector('.wrapper');
+// const hearts = wrapper.querySelectorAll('.heart');
+// const oneHeart = wrapper.querySelector('.heart');
+
+
+// box.style.backgroundColor = 'green';
+// box.style.width = '500px';
+
+// const num = '250px';
+// box.style.cssText = `background-color: orange; width: ${num}`;
+
+// btns[1].style.borderRadius = '100%';
+
+// circles[0].style.backgroundColor = 'pink';
+
+// // for (let i = 0; i < hearts.length; i++) {
+// //   hearts[i].style.backgroundColor = 'blue';
+// // }
+
+// hearts.forEach(item => {
+//   item.style.backgroundColor = 'blue';
+// });
+
+// const div = document.createElement('div');
+// // const text = document.createTextNode('There i was');
+
+// div.classList.add('black');
+
+// wrapper.append(div);
+
+// // wrapper.prepend(div);
+
+// // wrapper.insertBefore(div, hearts[0]); // old method
+
+// // hearts[1].before(div);
+// // hearts[1].after(div);
+
+// // btns[3].remove();
+
+// hearts[0].replaceWith(circles[0]);
+
+// div.innerHTML = '<h1>Hello world</h1>';
+// // div.textContent = "Hello";
+
+// div.insertAdjacentHTML('beforebegin', '<h2>Hello!</h2>');
+
+
+// ============================================================ 42 Получение элементов со страницы =====================================================
+
+// const box = document.getElementById('box');
+
+// console.log(box);
+
+// // const btns = document.getElementsByTagName('button')[1];
+// const btns = document.getElementsByTagName('button');
+
+// console.log(btns[1]);
+
+// const circles = document.getElementsByClassName('circle');
+
+// console.log(circles);
+
+// const hearts = document.querySelectorAll('.heart');
+
+// hearts.forEach(item => {
+//   console.log(item);
+// });
+
+// const oneHeart = document.querySelector('button');
+// console.log(oneHeart);
+
+
+
+// ============================================================ 41 Задачи с собеседований =====================================================
+
+// console.log(+"Infinity");
+
+
+// ============================================================  =====================================================
+
+
+// let value = "Сюрприз!";
+
+// function f() {
+//   let value = "ближайшее значение";
+
+//   function g() {
+//     debugger; // в консоли: напишите alert(value); Сюрприз!
+//   }
+
+//   return g;
+// }
+
+// let g = f();
+// g();
+
+// ============================================================ 40 Замыкание и лексическое окружение =====================================================
+
+
+// function createCounter() {
+//     let counter = 0;
+
+//     const myFunction = function() {debugger
+//         counter = counter + 1; debugger
+//         return counter;debugger
+//     }
+
+//     return myFunction;
+// }
+// debugger
+// const increment = createCounter();debugger
+// const c1 = increment();debugger
+// const c2 = increment();debugger
+// const c3 = increment();debugger
+
+// console.log(c1, c2, c3);
+
+
+// let number = 5; debugger
+
+// function logNumber() {
+//     console.log(number); debugger
+// }
+
+// number = 6;
+
+// logNumber(); debugger
+
+// number = 8;
+
+// logNumber(); debugger
+
+// ============================================================ 39 Динамическая типизация =====================================================
+
+// to string
+// 1)
+// console.log(typeof(String(4)));
+
+// // 2)
+// console.log(typeof(5));
+
+// const num = 5;
+
+// console.log("https://vk.com/catalog/" + num);
+
+// const fontSize = 26 + 'px';
+
+// // to number
+// // 1)
+// console.log(typeof(Number('4')));
+
+// // 2)
+// console.log(typeof(+'5'));
+
+// // 3)
+
+// console.log(typeof(parseInt("15px", 10)));
+
+// let answer = +prompt("Hello", "55");
+// console.log(answer);
+
+// // to boolean
+// // 0, '', null, undefined, NaN;
+// // 1)
+// let switcher = null;
+
+// if (switcher) {
+//     console.log("Working...");
+// }
+
+// switcher = 1;
+// if (switcher) {
+//     console.log("Working...");
+// }
+
+// // 2)
+
+// console.log(typeof(Boolean(4)));
+
+// // 3)
+
+// console.log(typeof(!!"444"));
+
+
 // ============================================================ 37 Практика, ч. 4 используем объекты =====================================================
 
 
